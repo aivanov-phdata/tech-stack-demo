@@ -1,4 +1,4 @@
-name: 'snowflake_workshop'
+name: 'tech_stack_demo'
 version: '1.0.0'
 config-version: 2
 
@@ -20,7 +20,7 @@ models:
   snowflake_workshop:
     staging:
       materialized: view
-      snowflake_warehouse: pc_dbt_wh
+      snowflake_warehouse: dbt_wh
     marts:
       materialized: table
-      snowflake_warehouse: pc_dbt_wh_large
+      snowflake_warehouse: dbt_wh

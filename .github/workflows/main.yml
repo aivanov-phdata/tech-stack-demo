@@ -1,0 +1,21 @@
+name: dbt Cloud Production Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger dbt Cloud Deployment Job
+        env:
+          DBT_CLOUD_API_KEY: dbtc_g469a50WUxr2u8cxTLOvCsjPG81fPOCsUo0dn38rOmkq7EA6GA
+        run: |
+          curl -X POST \
+          -H "Authorization: Token ${DBT_CLOUD_API_KEY}" \
+          -H "Content-Type: application/json" \
+          "https://cloud.getdbt.com/api/v2/accounts/70471823473601/projects/70471823483316/jobs/70471823479618/run/" \
+          -d '{}' 

@@ -3,7 +3,7 @@ sources:
   - name: tpch
     description: tpch data from s3
     database: s3_fivetran
-    schema: s7
+    schema: s3
     tables:
       - name: orders
         description: main order tracking table
